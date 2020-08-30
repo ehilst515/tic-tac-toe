@@ -7,33 +7,52 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             StartGame();
         }
 
         static void StartGame()
         {
-            // TODO: Setup your game. Create a new method that creates your players and instantiates the game class. Call that method in your Main method.
-            // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner. 
-            Console.WriteLine("Player 1, enter your name: ");
-            string p1Name = Console.ReadLine();
-            Console.WriteLine("Player 2, enter your name: ");
-            string p2Name = Console.ReadLine();
-            Player p1 = new Player();
-            Player p2 = new Player();
-            p1.Name = p1Name;
-            p2.Name = p2Name;
-            p1.Marker = "X";
-            p2.Marker = "O";
-            Game newGame = new Game(p1, p2);
-            Player winner = newGame.Play();
-            if(winner.Name != "Draw")
+            bool play = true;
+            while(play == true)
             {
-                Console.WriteLine($"Winner: {winner.Name}");
-            }
-            else
-            {
-                Console.WriteLine("Draw");
+                Console.WriteLine("Player 1, enter your name: ");
+                string p1Name = Console.ReadLine();
+                Console.WriteLine("Player 2, enter your name: ");
+                string p2Name = Console.ReadLine();
+                Console.Clear();
+
+                Player p1 = new Player();
+                Player p2 = new Player();
+                p1.Name = p1Name;
+                p2.Name = p2Name;
+                p1.Marker = "X";
+                p2.Marker = "O";
+
+                Game newGame = new Game(p1, p2);
+                Player winner = newGame.Play();
+
+                if (winner.Name != "Draw")
+                {
+                    Console.WriteLine($"Winner: {winner.Name}");
+                    Console.ReadLine();
+                }
+
+                else
+                {
+                    Console.WriteLine("Draw");
+                    Console.ReadLine();
+                }
+
+                Console.WriteLine("Enter 'play' or 'p' to play again, or 'quit' or 'q' if you'd like to stop.");
+                string input = Console.ReadLine().ToLower();
+                if(input == "play" || input == "p")
+                {
+                    play = true;
+                }
+                else
+                {
+                    play = false;
+                }
             }
         }
     }
