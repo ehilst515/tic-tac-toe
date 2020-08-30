@@ -34,13 +34,12 @@ namespace Lab04_TicTacToe
                 if (winner.Name != "Draw")
                 {
                     Console.WriteLine($"Winner: {winner.Name}");
-                    Console.ReadLine();
+
                 }
 
                 else
                 {
-                    Console.WriteLine("Draw");
-                    Console.ReadLine();
+                    Console.WriteLine("Draw");         
                 }
 
                 Console.WriteLine("Enter 'play' or 'p' to play again, or 'quit' or 'q' if you'd like to stop.");
