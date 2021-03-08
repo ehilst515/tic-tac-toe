@@ -5,7 +5,7 @@ namespace TicTacToe
 {
     class Program
     {
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             StartGame();
         }
