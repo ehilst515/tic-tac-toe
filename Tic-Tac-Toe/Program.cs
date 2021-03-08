@@ -1,11 +1,11 @@
 ﻿using System;
-using Lab04_TicTacToe.Classes;
+using TicTacToe.Classes;
 
-namespace Lab04_TicTacToe
+namespace TicTacToe
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             StartGame();
         }

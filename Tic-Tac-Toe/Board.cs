@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab04_TicTacToe.Classes
+namespace TicTacToe.Classes
 {
     class Board
 	{
