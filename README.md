@@ -1,25 +1,29 @@
 ![.NET Core](https://github.com/ehilst515/tic-tac-toe/workflows/.NET%20Core/badge.svg)
 
-
 ## Tic-Tac-Toe
 
-*Author: Enrique Hilst*
+### Author: Enrique Hilst
 
 ----
 
 ## Description
+
 This is a console application that allows two players to play the game Tic Tac Toe.
 
 ---
 
 ### Getting Started
+
 Clone this repository to your local machine.
 
 ```
-$ git clone https://github.com/ehilst515/tic-tac-toe.git
+git clone https://github.com/ehilst515/tic-tac-toe.git
 ```
 
-### To run the program from Visual Studio:
+Or interact with this project hosted online. The online compiler is much slower! Visit here:
+<https://www.onlinegdb.com/rkosjmNQ_>
+
+### To run the program from Visual Studio
 
 Select ```File``` -> ```Open``` -> ```Project/Solution```
 
