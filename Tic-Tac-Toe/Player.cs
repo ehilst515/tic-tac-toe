@@ -86,10 +86,11 @@ namespace TicTacToe.Classes
                     isValidPlay = true;
                 }
 
-                Console.WriteLine($"That space is already occupied");
+                if (!positionIsNumber)
+                    Console.WriteLine($"That space is already occupied");
 
             }
- 
+
 
             return isValidPlay;
         }
