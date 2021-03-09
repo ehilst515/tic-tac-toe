@@ -37,10 +37,9 @@ namespace TicTacToe
 
                 }
 
-                else
-                {
+                if(winner.Name == "Draw")
                     Console.WriteLine("Draw");         
-                }
+
 
                 Console.WriteLine("Enter 'play' or 'p' to play again, or any other entry to quit.");
                 string input = Console.ReadLine().ToLower();

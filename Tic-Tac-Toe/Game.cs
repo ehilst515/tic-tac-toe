@@ -32,10 +32,17 @@ namespace TicTacToe.Classes
             Player currentPlayer = NextPlayer();
             while (CheckForWinner(Board) == false && turns < 10)
             {
+                if (turns == 9)
+                {
+                    currentPlayer.Name = "Draw";
+                    break;
+                }
+
                 Board.DisplayBoard();
+
                 bool fairPlay  = currentPlayer.TakeTurn(Board);
 
-                if (!fairPlay)
+                if (!fairPlay && currentPlayer.Name != "Draw")
                 {
                     Play();
                 }
@@ -43,13 +50,10 @@ namespace TicTacToe.Classes
                 SwitchPlayer();
                 turns++;
                 currentPlayer = NextPlayer();
-                if (turns == 9)
-                {
-                    currentPlayer.Name = "Draw";
-                    turns++;
-                }
+
                 Console.Clear();
             }
+
             Board.DisplayBoard();
             return currentPlayer;
         }

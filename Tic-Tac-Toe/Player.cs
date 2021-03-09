@@ -19,16 +19,9 @@ namespace TicTacToe.Classes
 
         public List<int> Played = new List<int>();
 
-        public int j = 0;
 
         public Position GetPosition(Board board)
         {
-            //if (j == 8)
-            //{
-            //    Console.WriteLine("Out of moves!");
-            //    return null;
-            //}
-
             Position desiredCoordinate = null;
 
             while (desiredCoordinate == null)
@@ -46,7 +39,6 @@ namespace TicTacToe.Classes
                 desiredCoordinate = PositionForNumber(position);
             }
 
-            j++;
             return desiredCoordinate;
         }
 
@@ -72,26 +64,32 @@ namespace TicTacToe.Classes
         public bool TakeTurn(Board board)
         {
             bool isValidPlay = false;
+            bool notDraw = Name != "Draw";
             IsTurn = true;
 
-            Console.WriteLine($"{Name} it is your turn. Place your {Marker} on the board.");
-
-            Position position = GetPosition(board);
-
-            if(position == null)
+            if (notDraw)
             {
-                return isValidPlay;
-            }
-            
-            bool positionIsNumber = Int32.TryParse(board.GameBoard[position.Row, position.Column], out _);
+                Console.WriteLine($"{Name} it is your turn. Place your {Marker} on the board.");
 
-            if (positionIsNumber)
-            {
-                board.GameBoard[position.Row, position.Column] = Marker;
-                isValidPlay = true;
+                Position position = GetPosition(board);
+
+                if (position == null)
+                {
+                    return isValidPlay;
+                }
+
+                bool positionIsNumber = Int32.TryParse(board.GameBoard[position.Row, position.Column], out _);
+
+                if (positionIsNumber)
+                {
+                    board.GameBoard[position.Row, position.Column] = Marker;
+                    isValidPlay = true;
+                }
+
+                Console.WriteLine($"That space is already occupied");
+
             }
-            
-            Console.WriteLine($"That space is already occupied");
+ 
 
             return isValidPlay;
         }
