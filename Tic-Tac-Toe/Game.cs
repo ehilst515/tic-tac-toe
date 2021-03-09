@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab04_TicTacToe.Classes
+namespace TicTacToe.Classes
 {
     class Game
     {
@@ -30,24 +30,33 @@ namespace Lab04_TicTacToe.Classes
         {
             int turns = 0;
             Player currentPlayer = NextPlayer();
-            while(CheckForWinner(Board) == false && turns < 10)
+            while (CheckForWinner(Board) == false && turns < 10)
             {
+                if (turns == 9)
+                {
+                    currentPlayer.Name = "Draw";
+                    break;
+                }
+
                 Board.DisplayBoard();
-                currentPlayer.TakeTurn(Board);
+
+                bool fairPlay  = currentPlayer.TakeTurn(Board);
+
+                if (!fairPlay && currentPlayer.Name != "Draw")
+                {
+                    Play();
+                }
+
                 SwitchPlayer();
                 turns++;
                 currentPlayer = NextPlayer();
-                if(turns == 9)
-                {
-                    currentPlayer.Name = "Draw";
-                    turns++;
-                }
+
                 Console.Clear();
             }
+
             Board.DisplayBoard();
             return currentPlayer;
         }
-
 
         /// <summary>
         /// Check if winner exists
@@ -81,7 +90,7 @@ namespace Lab04_TicTacToe.Classes
                 string b = Board.GameBoard[p2.Row, p2.Column];
                 string c = Board.GameBoard[p3.Row, p3.Column];
 
-                if($"{a}{b}{c}" == "XXX" || $"{a}{b}{c}" == "OOO")
+                if ($"{a}{b}{c}" == "XXX" || $"{a}{b}{c}" == "OOO")
                 {
                     return true;
                 }
@@ -110,8 +119,6 @@ namespace Lab04_TicTacToe.Classes
             {
 
                 PlayerOne.IsTurn = false;
-
-
                 PlayerTwo.IsTurn = true;
             }
             else

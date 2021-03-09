@@ -1,7 +1,7 @@
 ﻿using System;
-using Lab04_TicTacToe.Classes;
+using TicTacToe.Classes;
 
-namespace Lab04_TicTacToe
+namespace TicTacToe
 {
     class Program
     {
@@ -37,12 +37,11 @@ namespace Lab04_TicTacToe
 
                 }
 
-                else
-                {
+                if(winner.Name == "Draw")
                     Console.WriteLine("Draw");         
-                }
 
-                Console.WriteLine("Enter 'play' or 'p' to play again, or 'quit' or 'q' if you'd like to stop.");
+
+                Console.WriteLine("Enter 'play' or 'p' to play again, or any other entry to quit.");
                 string input = Console.ReadLine().ToLower();
                 if(input == "play" || input == "p")
                 {
