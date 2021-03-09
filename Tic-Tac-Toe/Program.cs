@@ -5,7 +5,7 @@ namespace TicTacToe
 {
     class Program
     {
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             StartGame();
         }
@@ -42,7 +42,7 @@ namespace TicTacToe
                     Console.WriteLine("Draw");         
                 }
 
-                Console.WriteLine("Enter 'play' or 'p' to play again, or 'quit' or 'q' if you'd like to stop.");
+                Console.WriteLine("Enter 'play' or 'p' to play again, or any other entry to quit.");
                 string input = Console.ReadLine().ToLower();
                 if(input == "play" || input == "p")
                 {
