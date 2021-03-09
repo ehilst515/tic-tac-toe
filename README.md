@@ -21,7 +21,7 @@ git clone https://github.com/ehilst515/tic-tac-toe.git
 ```
 
 Or interact with this project hosted online. The online compiler is much slower! Visit here:
-<https://www.onlinegdb.com/rkosjmNQ_>
+<https://onlinegdb.com/BkW0jLXS7O>
 
 ### To run the program from Visual Studio
 
